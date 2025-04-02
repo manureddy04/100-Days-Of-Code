@@ -42,17 +42,3 @@ print(solution.twoSum(nums, target))  # Output: [0, 1]
 
 ## Space Complexity
 - **O(1)**: No additional data structures are used, only variables.
-
-## Alternative Approach (Optimized)
-A more efficient solution can be implemented using a **hash map** (dictionary) to store indices, reducing the time complexity to **O(n)**.
-```python
-class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        num_dict = {}
-        for i, num in enumerate(nums):
-            complement = target - num
-            if complement in num_dict:
-                return [num_dict[complement], i]
-            num_dict[num] = i
-        return []
-```
