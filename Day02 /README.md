@@ -35,23 +35,18 @@ class Solution:
             l1 = l1.next if l1 else None
             l2 = l2.next if l2 else None
         return dummyHead.next
-Explanation
-Initialize a dummyHead node to help manage the resulting linked list.
+```
 
-Use a carry variable to handle sums greater than 9.
+## Explanation
+1. Initialize a `dummyHead` node to help manage the resulting linked list.
+2. Use a `carry` variable to handle sums greater than 9.
+3. Traverse `l1` and `l2`, adding corresponding node values and updating `carry`.
+4. Create new nodes in the result list to store the sum of each digit pair.
+5. If a carry remains after traversal, add an extra node.
+6. Return `dummyHead.next`, which points to the resulting linked list.
 
-Traverse l1 and l2, adding corresponding node values and updating carry.
-
-Create new nodes in the result list to store the sum of each digit pair.
-
-If a carry remains after traversal, add an extra node.
-
-Return dummyHead.next, which points to the resulting linked list.
-
-Example Usage
-python
-Copy
-Edit
+## Example Usage
+```python
 def linked_list_from_list(lst):
     dummy = ListNode(0)
     curr = dummy
@@ -72,8 +67,10 @@ l2 = linked_list_from_list([5, 6, 4])  # Represents number 465
 solution = Solution()
 result = solution.addTwoNumbers(l1, l2)  # Expected output: 7 -> 0 -> 8
 print_linked_list(result)
-Time Complexity
-O(max(m, n)): The solution processes each node once, where m and n are the lengths of l1 and l2.
+```
 
-Space Complexity
-O(max(m, n)): The solution stores the sum in a new linked list, requiring space proportional to the longest input list.
+## Time Complexity
+- **O(max(m, n))**: The solution processes each node once, where `m` and `n` are the lengths of `l1` and `l2`.
+
+## Space Complexity
+- **O(max(m, n))**: The solution stores the sum in a new linked list, requiring space proportional to the longest input list.
